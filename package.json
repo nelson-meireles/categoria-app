@@ -6,7 +6,8 @@
       "build": "tsc",
       "start": "node dist/index.js",
       "start:dev": "ts-node src/index.ts",
-      "test": "jest"
+      "test": "jest",
+      "tsc:check": "tsc --noEmit"
     },
     "dependencies": {},
     "devDependencies": {
