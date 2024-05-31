@@ -30,7 +30,7 @@ describe('Video', () => {
     expect(video.props.description).toBe('Video Description');
     expect(video.props.duration).toBe(120);
     expect(video.props.year_launched).toBe(2023);
-    expect(video.props.category).toContain(category);
+    expect(video.props.category).toBe(category);
     expect(video.props.cast_members).toContain(castMember);
     expect(video.props.genres).toContain(genre);
     expect(video.created_at).toBeInstanceOf(Date);

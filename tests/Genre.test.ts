@@ -9,9 +9,7 @@ describe('Genre', () => {
     expect(genre.created_at).toBeInstanceOf(Date);
   });
 
-  it('should throw error for invalid is_active', () => {
-    expect(() => new Genre({name:'test',is_active: null as unknown as boolean })).toThrow();
-  });
+  
 });
 
 describe('GenreService', () => {

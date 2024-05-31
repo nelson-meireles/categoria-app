@@ -27,14 +27,14 @@ export class Video extends Entidade<VideoProps> {
   }
 
   private validateTitle(title: string): void {
-    if (typeof title !== 'string' || title.length > 255) {
-      throw new Error('Title must be a string with a maximum length of 255 characters.');
+    if (typeof title !== 'string' || title.length === 0 || title.length > 255) {
+      throw new Error('Title must be a non-empty string with a maximum length of 255 characters.');
     }
   }
 
   private validateDescription(description: string): void {
-    if (typeof description !== 'string') {
-      throw new Error('Description must be a string.');
+    if (typeof description !== 'string' || description.length === 0) {
+      throw new Error('Description must be a non-empty string.');
     }
   }
 
