@@ -3,11 +3,11 @@ import { CastMemberService } from '../src/services/CastMemberService';
 
 describe('CastMember', () => {
   it('should create a CastMember', () => {
-    const castMember = new CastMember({ name: 'John Doe', type: CastMemberType.ACTOR });
+    const castMember = new CastMember({ name: 'John Doe', type: CastMemberType.ACTOR },undefined,new Date());
     expect(castMember).toBeInstanceOf(CastMember);
     expect(castMember.props.name).toBe('John Doe');
     expect(castMember.props.type).toBe(CastMemberType.ACTOR);
-    expect(castMember.props.created_at).toBeInstanceOf(Date);
+    expect(castMember.created_at).toBeInstanceOf(Date);
   });
 
   it('should throw error for invalid name', () => {
@@ -81,8 +81,8 @@ describe('CastMemberRepository', () => {
   });
 
   it('should sort CastMembers by created_at', () => {
-    const castMember1 = new CastMember({ name: 'John Doe', type: CastMemberType.ACTOR }, new Date('2022-01-01'));
-    const castMember2 = new CastMember({ name: 'Jane Doe', type: CastMemberType.DIRECTOR }, new Date('2023-01-01'));
+    const castMember1 = new CastMember({ name: 'John Doe', type: CastMemberType.ACTOR },undefined, new Date('2022-01-01'));
+    const castMember2 = new CastMember({ name: 'Jane Doe', type: CastMemberType.DIRECTOR },undefined, new Date('2023-01-01'));
     repository.create(castMember1);
     repository.create(castMember2);
     const sorted = repository.sortByCreatedAt();

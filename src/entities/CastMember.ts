@@ -12,9 +12,8 @@ interface CastMemberProps {
 }
 
 export class CastMember extends Entidade<CastMemberProps> {
-  constructor(props: CastMemberProps, created_at?: Date) {
-    super(props);
-    this.props.created_at = created_at ?? new Date();
+  constructor(props: CastMemberProps, id?: string, created_at?: Date) {
+    super(props, id, created_at);
     this.validate();
   }
 

@@ -40,6 +40,6 @@ export class CastMemberService {
   }
 
   sortByCreatedAt(): CastMember[] {
-    return this.castMembers.sort((a, b) => a.props.created_at.getTime() - b.props.created_at.getTime());
+    return this.castMembers.sort((a, b) => a.created_at.getTime() - b.created_at.getTime());
   }
 }
